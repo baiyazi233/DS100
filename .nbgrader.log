@@ -1,0 +1,171 @@
+[NotebookApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[NotebookApp | INFO] Loading the validate_assignment nbgrader serverextension
+[NotebookApp | INFO] Serving notebooks from local directory: /home/wanghaoyu/DS100
+[NotebookApp | INFO] 0 active kernels
+[NotebookApp | INFO] The Jupyter Notebook is running at:
+[NotebookApp | INFO] http://localhost:8888/?token=f4b8b2553d9cd75aeb0a2e47175033aab784f03e466c7ab7
+[NotebookApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[NotebookApp | CRITICAL] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=f4b8b2553d9cd75aeb0a2e47175033aab784f03e466c7ab7
+[NotebookApp | INFO] Accepting one-time-token-authenticated connection from 127.0.0.1
+[NotebookApp | INFO] Kernel started: 3aea82c9-91a3-41aa-8f2e-247b06da4948
+[NotebookApp | INFO] 302 GET /notebooks/lab/lab01/derivative.png (127.0.0.1) 1.20ms
+[NotebookApp | WARNING] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20241012151237 (127.0.0.1) 8.76ms referer=http://localhost:8888/notebooks/lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 3aea82c9-91a3-41aa-8f2e-247b06da4948
+[NotebookApp | INFO] interrupted
+[NotebookApp | CRITICAL] Shutdown confirmed
+[NotebookApp | INFO] Shutting down 1 kernel
+[NotebookApp | INFO] Kernel shutdown: 3aea82c9-91a3-41aa-8f2e-247b06da4948
+[NotebookApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[NotebookApp | INFO] Loading the validate_assignment nbgrader serverextension
+[NotebookApp | INFO] Serving notebooks from local directory: /home/wanghaoyu/DS100
+[NotebookApp | INFO] 0 active kernels
+[NotebookApp | INFO] The Jupyter Notebook is running at:
+[NotebookApp | INFO] http://localhost:8888/?token=00cb344938e07c6a43a97acdbdf20ab14a0e4ab2219ce10d
+[NotebookApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[NotebookApp | CRITICAL] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=00cb344938e07c6a43a97acdbdf20ab14a0e4ab2219ce10d
+[NotebookApp | INFO] Accepting one-time-token-authenticated connection from 127.0.0.1
+[NotebookApp | INFO] Creating new notebook in 
+[NotebookApp | INFO] Kernel started: 489958cb-3055-4a71-ba2e-82f5c7447158
+[NotebookApp | WARNING] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20241012151604 (127.0.0.1) 8.35ms referer=http://localhost:8888/notebooks/Untitled.ipynb?kernel_name=data100
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 489958cb-3055-4a71-ba2e-82f5c7447158
+[NotebookApp | INFO] Starting buffering for 489958cb-3055-4a71-ba2e-82f5c7447158:250f7ed9d4cf435f85af519fb4f5bee8
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 489958cb-3055-4a71-ba2e-82f5c7447158
+[NotebookApp | WARNING] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20241012151604 (127.0.0.1) 2.17ms referer=http://localhost:8888/notebooks/Untitled.ipynb
+[NotebookApp | INFO] Kernel started: b59ca6fb-bb0a-4c5d-aec8-795a9e28ee39
+[NotebookApp | INFO] 302 GET /notebooks/lab/lab01/derivative.png (127.0.0.1) 1.43ms
+[NotebookApp | WARNING] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20241012151604 (127.0.0.1) 2.20ms referer=http://localhost:8888/notebooks/lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel b59ca6fb-bb0a-4c5d-aec8-795a9e28ee39
+[NotebookApp | INFO] Starting buffering for b59ca6fb-bb0a-4c5d-aec8-795a9e28ee39:13c72fe80ebc4179b16c94e05d730a57
+[NotebookApp | INFO] Kernel shutdown: b59ca6fb-bb0a-4c5d-aec8-795a9e28ee39
+[NotebookApp | INFO] Kernel started: 23549db2-8cde-4d43-af64-93b98f7496da
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 23549db2-8cde-4d43-af64-93b98f7496da
+[NotebookApp | INFO] interrupted
+[NotebookApp | CRITICAL] Shutdown confirmed
+[NotebookApp | INFO] Shutting down 2 kernels
+[NotebookApp | INFO] Kernel shutdown: 489958cb-3055-4a71-ba2e-82f5c7447158
+[NotebookApp | INFO] Kernel shutdown: 23549db2-8cde-4d43-af64-93b98f7496da
+[NotebookApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[NotebookApp | INFO] Loading the validate_assignment nbgrader serverextension
+[NotebookApp | INFO] Serving notebooks from local directory: /home/wanghaoyu/DS100
+[NotebookApp | INFO] 0 active kernels
+[NotebookApp | INFO] The Jupyter Notebook is running at:
+[NotebookApp | INFO] http://localhost:8888/?token=b1da4a0e2646c4b56bd61fcabfd21860d51484e53904172f
+[NotebookApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[NotebookApp | CRITICAL] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=b1da4a0e2646c4b56bd61fcabfd21860d51484e53904172f
+[NotebookApp | INFO] Accepting one-time-token-authenticated connection from 127.0.0.1
+[NotebookApp | INFO] Kernel started: db4325e1-59b1-4858-b566-bb8e32284770
+[NotebookApp | INFO] 302 GET /notebooks/lab/lab01/derivative.png (127.0.0.1) 0.86ms
+[NotebookApp | WARNING] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20241012151939 (127.0.0.1) 8.05ms referer=http://localhost:8888/notebooks/lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel db4325e1-59b1-4858-b566-bb8e32284770
+[NotebookApp | INFO] Starting buffering for db4325e1-59b1-4858-b566-bb8e32284770:9a6ef5fcc1d4419693fcb502d603db37
+[NotebookApp | INFO] Kernel shutdown: db4325e1-59b1-4858-b566-bb8e32284770
+[NotebookApp | INFO] Kernel started: 4441b2db-2434-4aa8-a2ab-c49753f950a5
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 4441b2db-2434-4aa8-a2ab-c49753f950a5
+[NotebookApp | INFO] Starting buffering for 4441b2db-2434-4aa8-a2ab-c49753f950a5:9a6ef5fcc1d4419693fcb502d603db37
+[NotebookApp | INFO] interrupted
+[NotebookApp | CRITICAL] Shutdown confirmed
+[NotebookApp | INFO] Shutting down 1 kernel
+[NotebookApp | INFO] Kernel shutdown: 4441b2db-2434-4aa8-a2ab-c49753f950a5
+[NotebookApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[NotebookApp | INFO] Loading the validate_assignment nbgrader serverextension
+[NotebookApp | INFO] Serving notebooks from local directory: /home/wanghaoyu/DS100
+[NotebookApp | INFO] 0 active kernels
+[NotebookApp | INFO] The Jupyter Notebook is running at:
+[NotebookApp | INFO] http://localhost:8888/?token=14ccf354f3be95d22560479561eec8f5100dd5a8a16c3553
+[NotebookApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[NotebookApp | CRITICAL] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=14ccf354f3be95d22560479561eec8f5100dd5a8a16c3553
+[NotebookApp | INFO] Accepting one-time-token-authenticated connection from 127.0.0.1
+[NotebookApp | INFO] Kernel started: 53dc9c8a-e185-431e-85f7-a82ffe8f120b
+[NotebookApp | INFO] 302 GET /notebooks/lab/lab01/derivative.png (127.0.0.1) 0.72ms
+[NotebookApp | WARNING] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20241012152422 (127.0.0.1) 7.38ms referer=http://localhost:8888/notebooks/lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 53dc9c8a-e185-431e-85f7-a82ffe8f120b
+[NotebookApp | INFO] Starting buffering for 53dc9c8a-e185-431e-85f7-a82ffe8f120b:d3f9962c52ca416c92834cee330cc4b3
+[NotebookApp | INFO] Kernel shutdown: 53dc9c8a-e185-431e-85f7-a82ffe8f120b
+[NotebookApp | INFO] Kernel started: 984b8d2d-78a6-4064-aa4f-328bbccdc7a2
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 984b8d2d-78a6-4064-aa4f-328bbccdc7a2
+[NotebookApp | INFO] Starting buffering for 984b8d2d-78a6-4064-aa4f-328bbccdc7a2:d3f9962c52ca416c92834cee330cc4b3
+[NotebookApp | INFO] interrupted
+[NotebookApp | CRITICAL] Shutdown confirmed
+[NotebookApp | INFO] Shutting down 1 kernel
+[NotebookApp | INFO] Kernel shutdown: 984b8d2d-78a6-4064-aa4f-328bbccdc7a2
+[NotebookApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[NotebookApp | INFO] Loading the validate_assignment nbgrader serverextension
+[NotebookApp | INFO] Serving notebooks from local directory: /home/wanghaoyu/DS100
+[NotebookApp | INFO] 0 active kernels
+[NotebookApp | INFO] The Jupyter Notebook is running at:
+[NotebookApp | INFO] http://localhost:8888/?token=31eac4daeaaca6d4c5a2e19c74f599c2592a43f31a49ac89
+[NotebookApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[NotebookApp | CRITICAL] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=31eac4daeaaca6d4c5a2e19c74f599c2592a43f31a49ac89
+[NotebookApp | INFO] Accepting one-time-token-authenticated connection from 127.0.0.1
+[NotebookApp | INFO] Kernel started: db851966-324e-4573-ae8f-3d682bac2a09
+[NotebookApp | INFO] 302 GET /notebooks/lab/lab01/derivative.png (127.0.0.1) 1.87ms
+[NotebookApp | WARNING] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20241012152647 (127.0.0.1) 8.10ms referer=http://localhost:8888/notebooks/lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel db851966-324e-4573-ae8f-3d682bac2a09
+[NotebookApp | INFO] Starting buffering for db851966-324e-4573-ae8f-3d682bac2a09:a3ae41e2f8744e93a1053eeef2555ea5
+[NotebookApp | INFO] Kernel shutdown: db851966-324e-4573-ae8f-3d682bac2a09
+[NotebookApp | INFO] Kernel started: 04b9e297-6ab2-4732-8766-11ae90b86e0c
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 04b9e297-6ab2-4732-8766-11ae90b86e0c
+[NotebookApp | INFO] Saving file at /lab/lab01/lab01.ipynb
+[NotebookApp | WARNING] No nbgrader_config.py file found. Rerun with DEBUG log level to see where nbgrader is looking.
+[NotebookApp | INFO] Validating '/home/wanghaoyu/DS100/lab/lab01/lab01.ipynb'
+[NotebookApp | ERROR] Traceback (most recent call last):
+      File "/home/wanghaoyu/anaconda3/envs/data100/lib/python3.6/site-packages/nbgrader/server_extensions/validate_assignment/handlers.py", line 48, in validate_notebook
+        result = validator.validate(os.path.join(self.notebook_dir, path))
+      File "/home/wanghaoyu/anaconda3/envs/data100/lib/python3.6/site-packages/nbgrader/validator.py", line 228, in validate
+        nb = self._preprocess(basename)
+      File "/home/wanghaoyu/anaconda3/envs/data100/lib/python3.6/site-packages/nbgrader/validator.py", line 216, in _preprocess
+        nb = read_nb(filename, as_version=current_nbformat)
+      File "/home/wanghaoyu/anaconda3/envs/data100/lib/python3.6/site-packages/nbgrader/nbgraderformat/v1.py", line 125, in read_v1
+        ValidatorV1().validate_nb(nb)
+      File "/home/wanghaoyu/anaconda3/envs/data100/lib/python3.6/site-packages/nbgrader/nbgraderformat/v1.py", line 102, in validate_nb
+        super(ValidatorV1, self).validate_nb(nb)
+      File "/home/wanghaoyu/anaconda3/envs/data100/lib/python3.6/site-packages/nbgrader/nbgraderformat/common.py", line 35, in validate_nb
+        self.validate_cell(cell)
+      File "/home/wanghaoyu/anaconda3/envs/data100/lib/python3.6/site-packages/nbgrader/nbgraderformat/v1.py", line 69, in validate_cell
+        super(ValidatorV1, self).validate_cell(cell)
+      File "/home/wanghaoyu/anaconda3/envs/data100/lib/python3.6/site-packages/nbgrader/nbgraderformat/common.py", line 31, in validate_cell
+        jsonschema.validate(cell.metadata['nbgrader'], self.schema)
+      File "/home/wanghaoyu/anaconda3/envs/data100/lib/python3.6/site-packages/jsonschema/validators.py", line 541, in validate
+        cls(schema, *args, **kwargs).validate(instance)
+      File "/home/wanghaoyu/anaconda3/envs/data100/lib/python3.6/site-packages/jsonschema/validators.py", line 130, in validate
+        raise error
+    jsonschema.exceptions.ValidationError: 2 is greater than the maximum of 1
+    
+    Failed validating 'maximum' in schema['properties']['schema_version']:
+        {'description': 'the version of the cell metadata schema',
+         'maximum': 1,
+         'minimum': 1,
+         'type': 'integer'}
+    
+    On instance['schema_version']:
+        2
+    
+[NotebookApp | INFO] Saving file at /lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Saving file at /lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Saving file at /lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Saving file at /lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Saving file at /lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Saving file at /lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Saving file at /lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Saving file at /lab/lab01/lab01.ipynb
+[NotebookApp | INFO] Starting buffering for 04b9e297-6ab2-4732-8766-11ae90b86e0c:a3ae41e2f8744e93a1053eeef2555ea5
