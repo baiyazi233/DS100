@@ -260,3 +260,290 @@ elections["Candidate"]
 
 
 # 3 Pandas II
+
+# 4 Pandas III
+
+## 4.1 Custom Sorts
+
+### 4.1.1 Approach 1: Create a Temporary Column
+
+```python
+# Create a Series of the length of each name
+babyname_lengths = babynames["Name"].str.len()
+
+# Add a column named "name_lengths" that includes the length of each name
+babynames["name_lengths"] = babyname_lengths
+babynames.head(5)
+
+# Sort by the temporary column
+babynames = babynames.sort_values(by="name_lengths", ascending=False)
+babynames.head(5)
+
+# Drop the 'name_length' column
+babynames = babynames.drop("name_lengths", axis='columns')
+babynames.head(5)
+```
+
+### 4.1.2 Approach 2: Sorting using the `key` Argument
+
+```python
+babynames.sort_values("Name", key=lambda x: x.str.len(), ascending=False).head()
+```
+
+### 4.1.3 Approach 3: Sorting using the `map` Function
+
+我们也可以在Series上使用map函数来解决这个问题。假设我们想要按照每个“Name”中的“dr”和“ea”的数量对babynames表进行排序。
+
+```python
+# First, define a function to count the number of times "dr" or "ea" appear in each name
+def dr_ea_count(string):
+    return string.count('dr') + string.count('ea')
+
+# Then, use `map` to apply `dr_ea_count` to each name in the "Name" column
+babynames["dr_ea_count"] = babynames["Name"].map(dr_ea_count)
+
+# Sort the DataFrame by the new "dr_ea_count" column so we can see our handiwork
+babynames = babynames.sort_values(by="dr_ea_count", ascending=False)
+babynames.head()
+
+# Drop the `dr_ea_count` column
+babynames = babynames.drop("dr_ea_count", axis = 'columns')
+babynames.head(5)
+```
+
+## 4.2 Aggregating Data with `.groupby`
+
+```python
+babynames.groupby("Year")
+```
+
+![groupby](./img/groupby.png)
+
+调用.groupby（documentation）生成了一个GroupBy对象。我们不能直接使用GroupBy对象，需要调用一个聚合方法。这个方法告诉pandas如何聚合GroupBy对象中的值。一旦应用了聚合，pandas将返回一个普通的（现在是分组的）DataFrame。
+
+```python
+babynames[["Year", "Count"]].groupby("Year").agg("sum").head(5)
+```
+
+![sum](./img/aggsum.png)
+
+```python
+babynames[["Year", "Count"]].groupby("Year").agg("min").head(5)
+
+babynames[["Year", "Count"]].groupby("Year").agg("max").head(5)
+
+# Same result, but now we explicitly tell pandas to only consider the "Count" column when summing
+babynames.groupby("Year")[["Count"]].agg("sum").head(5)
+```
+
+### 4.2.1 Aggregation Functions
+
+```python
+# What is the minimum count for each name in any year?
+babynames.groupby("Name")[["Count"]].agg("min").head()
+
+# What is the largest single-year count of each name?
+babynames.groupby("Name")[["Count"]].agg("max").head()
+
+# What is the average count for each name across all years?
+babynames.groupby("Name")[["Count"]].agg("mean").head()
+```
+
+- `.agg("sum")`
+- `.agg("max")`
+- `.agg("min")`
+- `.agg("mean")`
+- `.agg("first")`
+- `.agg("last")`
+
+考虑一个组中的多个列共享相同信息的情况。为了在分组输出中表示这些信息，我们可以简单地抓取第一个或最后一个条目，我们知道这将与所有其他条目相同。
+
+```python
+# Imagine we had an additional column, "First Letter". We'll explain this code next week
+babynames["First Letter"] = babynames["Name"].str[0]
+
+# We construct a simplified DataFrame containing just a subset of columns
+babynames_new = babynames[["Name", "First Letter", "Year"]]
+babynames_new.head()
+
+babynames_new.groupby("Name").agg({"First Letter":"first", "Year":"max"}).head()
+```
+
+![first](./img/first.png)
+
+### 4.2.2 Plotting Birth Counts
+
+```python
+babynames.groupby("Year")[["Count"]].agg(sum).head(5)
+# Alternative 1
+# babynames.groupby("Year")[["Count"]].sum()
+# Alternative 2
+# babynames.groupby("Year").sum(numeric_only=True)
+
+import plotly.express as px
+puzzle2 = babynames.groupby("Year")[["Count"]].agg("sum")
+px.line(puzzle2, y = "Count")
+```
+
+![puzzle2](./img/puzzle2.png)
+
+### 4.2.4 Revisiting the `.agg()` Function
+
+可以自定义方法
+
+```python
+# We filter by babies with sex "F" and sort by "Year"
+f_babynames = babynames[babynames["Sex"] == "F"]
+f_babynames = f_babynames.sort_values(["Year"])
+
+# Determine how many Jennifers were born in CA per year
+jenn_counts_series = f_babynames[f_babynames["Name"] == "Jennifer"]["Count"]
+
+# Determine the max number of Jennifers born in a year and the number born in 2022 
+# to calculate RTP
+max_jenn = max(f_babynames[f_babynames["Name"] == "Jennifer"]["Count"])
+curr_jenn = f_babynames[f_babynames["Name"] == "Jennifer"]["Count"].iloc[-1]
+rtp = curr_jenn / max_jenn
+rtp
+
+# 自定义
+
+def ratio_to_peak(series):
+    return series.iloc[-1] / max(series)
+
+#Using .groupby() to apply the function
+rtp_table = f_babynames.groupby("Name")[["Year", "Count"]].agg(ratio_to_peak)
+rtp_table.head()
+```
+
+### 4.2.6 Renaming Columns After Grouping
+
+默认情况下，.groupby不会重命名任何聚合列
+
+```python
+rtp_table = rtp_table.rename(columns = {"Count": "Count RTP"})
+rtp_table
+```
+
+### 4.2.7 Some Data Science Payoff
+
+```python
+import plotly.express as px
+px.line(f_babynames[f_babynames["Name"] == "Debra"], x = "Year", y = "Count")
+```
+
+![debra](./img/debra.png)
+
+```python
+top10 = rtp_table.sort_values("Count RTP").head(10).index
+px.line(
+    f_babynames[f_babynames["Name"].isin(top10)], 
+    x = "Year", 
+    y = "Count", 
+    color = "Name"
+)
+```
+
+![top10](./img/top10.png)
+
+## 4.3 `.groupby()`, Continued
+
+### 4.3.1 Raw `GroupBy` Objects
+
+查看DataFrameGroupBy对象的几种方法
+
+```python
+grouped_by_year = elections.groupby("Year")
+type(grouped_by_year)
+
+grouped_by_party = elections.groupby("Party")
+grouped_by_party.groups
+
+grouped_by_party.get_group("Socialist")
+```
+
+### 4.3.2 Other `GroupBy` Methods
+
+There are many aggregation methods we can use with `.agg`. Some useful options are:
+
+- [`.mean`](https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.mean.html#pandas.core.groupby.DataFrameGroupBy.mean): creates a new `DataFrame` with the mean value of each group
+- [`.sum`](https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.sum.html#pandas.core.groupby.DataFrameGroupBy.sum): creates a new `DataFrame` with the sum of each group
+- [`.max`](https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.max.html#pandas.core.groupby.DataFrameGroupBy.max) and [`.min`](https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.min.html#pandas.core.groupby.DataFrameGroupBy.min): creates a new `DataFrame` with the maximum/minimum value of each group
+- [`.first`](https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.first.html#pandas.core.groupby.DataFrameGroupBy.first) and [`.last`](https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.last.html#pandas.core.groupby.DataFrameGroupBy.last): creates a new `DataFrame` with the first/last row in each group
+- [`.size`](https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.size.html#pandas.core.groupby.DataFrameGroupBy.size): creates a new **`Series`** with the number of entries in each group
+- [`.count`](https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.count.html#pandas.core.groupby.DataFrameGroupBy.count): creates a new **`DataFrame`** with the number of entries, excluding missing values.
+
+size（）返回一个Series并计算包含缺失值的条目数，.count（）返回一个DataFrame并计算每列中不包含缺失值的条目数。
+
+### 4.3.3 Filtering by Group
+
+![filter](./img/filter.png)
+
+```python
+elections.groupby("Year").filter(lambda sf: sf["%"].max() < 45).head(9)
+```
+
+### 4.3.4 Aggregation with `lambda` Functions
+
+```python
+elections_sorted_by_percent.groupby("Party").agg(lambda x : x.iloc[0]).head(10)
+
+# Equivalent to the below code
+# elections_sorted_by_percent.groupby("Party").agg('first').head(10)
+```
+
+![party](./img/party.png)
+
+## 4.4 Aggregating Data with Pivot Tables
+
+```python
+# Find the total number of baby names associated with each sex for each 
+# year in the data
+babynames.groupby(["Year", "Sex"])[["Count"]].agg(sum).head(6)
+
+```
+
+![associate](./img/associate.png)
+
+```python
+# The `pivot_table` method is used to generate a Pandas pivot table
+import numpy as np
+babynames.pivot_table(
+    index = "Year",
+    columns = "Sex",    
+    values = "Count", 
+    aggfunc = "sum", 
+).head(5)
+
+babynames_pivot = babynames.pivot_table(
+    index="Year",     # the rows (turned into index)
+    columns="Sex",    # the column values
+    values=["Count", "Name"], 
+    aggfunc="max",      # group operation
+)
+babynames_pivot.head(6)
+```
+
+## 4.5 Joining Tables
+
+```python
+# This `str` operation splits each candidate's full name at each 
+# blank space, then takes just the candidate's first name
+elections["First Name"] = elections["Candidate"].str.split().str[0]
+elections.head(5)
+
+# Here, we'll only consider `babynames` data from 2022
+babynames_2022 = babynames[babynames["Year"]==2022]
+babynames_2022.head()
+
+merged = pd.merge(left = elections, right = babynames_2022, \
+                  left_on = "First Name", right_on = "Name")
+merged.head()
+# Notice that pandas automatically specifies `Year_x` and `Year_y` 
+# when both merged DataFrames have the same column name to avoid confusion
+
+# Second option
+# merged = elections.merge(right = babynames_2022, \
+    # left_on = "First Name", right_on = "Name")
+```
+
