@@ -547,3 +547,65 @@ merged.head()
     # left_on = "First Name", right_on = "Name")
 ```
 
+# 5 Data Cleaning and EDA(**Exploratory Data Analysis**)
+
+## 5.1 Structure
+
+### 5.1.1 File Formats
+
+#### 5.1.1.1 CSV(**Comma-Separated Values**)
+
+#### 5.1.1.2 TSV**(Tab-Separated Values)**
+
+TSVs can be loaded into `pandas` using `pd.read_csv`. We’ll need to specify the **delimiter** with parameter`sep='\t'` [(documentation)](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html).
+
+```python
+pd.read_csv("data/elections.txt", sep='\t').head(3)
+```
+
+#### 5.1.1.3 JSON(JavaScript Object Notation)
+
+```python
+pd.read_json('data/elections.json').head(3)
+```
+
+### 5.1.2 Primary and Foreign Keys
+
+### 5.1.3 Variable Types
+
+Broadly speaking, we can categorize variables into one of two overarching types.
+
+1. **Quantitative variables**
+   1. **Continuous quantitative variables**
+   2. **Discrete quantitative variables**
+2. **Qualitative variables**
+   1. **Ordinal qualitative variables**
+   2. **Nominal qualitative variables**
+
+![type](./img/type.png)
+
+Note that many variables don’t sit neatly in just one of these categories. Qualitative variables could have numeric levels, and conversely, quantitative variables could be stored as strings.
+
+## 5.2 Granularity, Scope, and Temporality
+
+We can also do many things with the `dt` accessor like switching time zones and converting time back to UNIX/POSIX time. Check out the documentation on [`.dt` accessor](https://pandas.pydata.org/docs/user_guide/basics.html#basics-dt-accessors) and [time series/date functionality](https://pandas.pydata.org/docs/user_guide/timeseries.html#).
+
+## 5.3 Faithfulness
+
+ that our data accurately captures the “real world.”
+
+Data used in research or industry is often “messy” – there may be errors or inaccuracies that impact the faithfulness of the dataset. Signs that data may not be faithful include:
+
+- Unrealistic or “incorrect” values, such as negative counts, locations that don’t exist, or dates set in the future
+- Violations of obvious dependencies, like an age that does not match a birthday
+- Clear signs that data was entered by hand, which can lead to spelling errors or fields that are incorrectly shifted
+- Signs of data falsification, such as fake email addresses or repeated use of the same names
+- Duplicated records or fields containing the same information
+- Truncated data, e.g. Microsoft Excel would limit the number of rows to 655536 and the number of columns to 255
+
+We often solve some of these more common issues in the following ways:
+
+- Spelling errors: apply corrections or drop records that aren’t in a dictionary
+- Time zone inconsistencies: convert to a common time zone (e.g. UTC)
+- Duplicated records or fields: identify and eliminate duplicates (using primary keys)
+- Unspecified or inconsistent units: infer the units and check that values are in reasonable ranges in the data
